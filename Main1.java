@@ -1,3 +1,4 @@
+
 /**
 * @filename-Mystring.java
 * @description-This will perform most of string operation
@@ -7,36 +8,38 @@ import java.util.Scanner;
 
 public class Main1 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a string: ");
-        String input = sc.nextLine();
+        System.out.print("Enter an initial string: ");
+        String input = scanner.nextLine();
 
         MyString myStr = new MyString(input);
 
-        while (true) {
-            System.out.println("\nChoose an operation:");
+        int choice;
+        do {
+            System.out.println("\n===== STRING OPERATIONS MENU =====");
             System.out.println("1. Append");
             System.out.println("2. Count Words");
-            System.out.println("3. Replace");
+            System.out.println("3. Replace Character");
             System.out.println("4. Check Palindrome");
-            System.out.println("5. Splice");
-            System.out.println("6. Split");
+            System.out.println("5. Splice (Substring)");
+            System.out.println("6. Split by Delimiter");
             System.out.println("7. Max Repeating Character");
-            System.out.println("8. Sort");
-            System.out.println("9. Shift");
-            System.out.println("10. Reverse");
-            System.out.println("11. Exit");
-
-            int choice = sc.nextInt();
-            sc.nextLine(); // consume newline
+            System.out.println("8. Sort Characters");
+            System.out.println("9. Shift First Character to Last");
+            System.out.println("10. Reverse String");
+            System.out.println("11. Display Current String");
+            System.out.println("0. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // consume newline
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter string to append:");
-                    String appendStr = sc.nextLine();
-                    myStr.append(appendStr);
-                    System.out.println("After append: " + myStr.str);
+                    System.out.print("Enter string to append: ");
+                    String toAppend = scanner.nextLine();
+                    myStr.append(toAppend);
+                    System.out.println("Updated string: " + myStr.text);
                     break;
 
                 case 2:
@@ -44,33 +47,33 @@ public class Main1 {
                     break;
 
                 case 3:
-                    System.out.println("Enter old character:");
-                    char oldChar = sc.next().charAt(0);
-                    System.out.println("Enter new character:");
-                    char newChar = sc.next().charAt(0);
+                    System.out.print("Enter old character: ");
+                    char oldChar = scanner.next().charAt(0);
+                    System.out.print("Enter new character: ");
+                    char newChar = scanner.next().charAt(0);
                     myStr.replace(oldChar, newChar);
-                    System.out.println("After replace: " + myStr.str);
+                    System.out.println("Updated string: " + myStr.text);
                     break;
 
                 case 4:
-                    if (myStr.isPalindrome())
-                        System.out.println("String is Palindrome");
-                    else
-                        System.out.println("String is not Palindrome");
+                    boolean result = myStr.isPalindrome();
+                    System.out.println("Is Palindrome? " + result);
                     break;
 
                 case 5:
-                    System.out.println("Enter start index:");
-                    int start = sc.nextInt();
-                    System.out.println("Enter end index:");
-                    int end = sc.nextInt();
-                    System.out.println("Spliced String: " + myStr.splice(start, end));
+                    System.out.print("Enter start index: ");
+                    int start = scanner.nextInt();
+                    System.out.print("Enter end index: ");
+                    int end = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Spliced string: " + myStr.splice(start, end));
                     break;
 
                 case 6:
-                    System.out.println("Enter delimiter character:");
-                    char delim = sc.next().charAt(0);
-                    myStr.split(delim);
+                    System.out.print("Enter delimiter character: ");
+                    char delimiter = scanner.next().charAt(0);
+                    System.out.println("Split parts:");
+                    myStr.split(delimiter);
                     break;
 
                 case 7:
@@ -79,27 +82,32 @@ public class Main1 {
 
                 case 8:
                     myStr.sort();
-                    System.out.println("After sorting: " + myStr.str);
+                    System.out.println("After Sorting: " + myStr.text);
                     break;
 
                 case 9:
                     myStr.shift();
-                    System.out.println("After shift: " + myStr.str);
+                    System.out.println("After Shift: " + myStr.text);
                     break;
 
                 case 10:
                     myStr.reverse();
-                    System.out.println("After reverse: " + myStr.str);
+                    System.out.println("After Reverse: " + myStr.text);
                     break;
 
                 case 11:
-                    System.out.println("Exiting...");
-                    sc.close();
-                    return;
+                    System.out.println("Current String: " + myStr.text);
+                    break;
+
+                case 0:
+                    System.out.println("Exiting program... Goodbye!");
+                    break;
 
                 default:
-                    System.out.println("Invalid choice! Try again.");
+                    System.out.println("Invalid choice! Please try again.");
             }
-        }
+        } while (choice != 0);
+
+        scanner.close();
     }
 }
