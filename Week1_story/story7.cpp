@@ -1,6 +1,6 @@
 /**
  * @filename    - Story7.cpp
- * @description - The Geometry Hierarchy (No inbuilt math or formatting functions)
+ * @description - The Geometry Hierarchy
  * @author      - Ehtesham Nawaz
  */
 #include <iostream>
