@@ -1,0 +1,22 @@
+# Ignore compiled binary files
+*.exe
+*.out
+*.o
+
+# Ignore temporary or cache files
+*.log
+*.tmp
+*.obj
+*.class
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore backup or autosave files
+*~
+*.swp
+
+# Ignore build directories (if any)
+build/
+dist/
