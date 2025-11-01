@@ -6,7 +6,7 @@ public class Main {
         int number = 0;
 
         System.out.println("🎯 Welcome to the Array Operations Console!");
-        System.out.println("============================================\n");
+        System.out.println("============================================");
 
         while (true) {
             System.out.print("📏 Enter the size of the array: ");
@@ -83,7 +83,7 @@ public class Main {
                     try {
                         int initialEnergy = Integer.parseInt(input.nextLine());
                         int answer = nums.theEfficientTraveller(initialEnergy);
-                        System.out.println("✅ Final energy after travelling: " + answer);
+                        System.out.println("✅ Result (The Efficient Traveller): " + answer);
                     } catch (NumberFormatException e) {
                         System.out.println("❌ Invalid input! Please enter a number.");
                     }
@@ -171,3 +171,4 @@ public class Main {
         input.close();
     }
 }
+
