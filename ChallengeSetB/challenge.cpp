@@ -41,19 +41,20 @@ int main(){
     cout << "Enter your problem (1-3): ";
     cin >> ch;
     switch(ch){
-        case 1:
-        cout << "The Time traveller array problem" << endl;
-        int n,k;
-        cout<<"Enter the size of the array and the target sum: ";
-        cin>>n>>k;
-        vector<int>arr(n);
-        for(int i=0;i<n;i++){
-        cin>>arr[i];    
+        case 1: {
+            cout << "The Time traveller array problem" << endl;
+            int n,k;
+            cout<<"Enter the size of the array and the target sum: ";
+            cin>>n>>k;
+            vector<int>arr(n);
+            for(int i=0;i<n;i++){
+                cin>>arr[i];    
+            }
+            int ans=subArraysWithSumK(arr,k);
+            cout <<"The number of subarrays with sum " << k << " is: " << ans << endl;
+            break;
         }
-        int ans=subArraysWithSumK(arr,k);
-        cout << ans << endl;
-        break;
-        case 2:
+        case 2: {
             cout << "The Shifted Cipher Problem" << endl;
             int l;
             cout<<"Enter the shift value";
@@ -64,11 +65,15 @@ int main(){
             string encrypted = cipherShift(input, l);
             cout << encrypted << endl;
             break;
-        case 3:
+        }
+        case 3: {
             exit(0);
-           cout << "" << endl;
-        default:
+            cout << "" << endl;
+            break;
+        }
+        default: {
             cout << "Default case selected" << endl;
+        }
     }
 
 
