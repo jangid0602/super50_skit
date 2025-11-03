@@ -1,13 +1,14 @@
 package Test_2_java;
 
 import java.util.Scanner;
-public class Main{
-    public static void main(String[] args){
+
+public class Main {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String choiceInput;
         int choice;
         Array arrayObject = new Array();
-        do{
+        do {
             System.out.println("1.) The Time Traveller's Array");
             System.out.println("2.) The Shifting Cipher");
             System.out.println("0.) Exit\n");
@@ -15,29 +16,38 @@ public class Main{
             System.out.println("Enter your Choice: ");
             choiceInput = scanner.nextLine();
 
-            if(choiceInput.matches("\\d+")){
+            if (choiceInput.matches("\\d+")) {
                 choice = Integer.parseInt(choiceInput);
-            }
-            else{
+            } else {
                 choice = -1;
             }
 
-            switch(choice){
+            switch (choice) {
                 case 1:
                     System.out.println("Enter the Size of the Array: ");
                     int size = scanner.nextInt();
+                    scanner.nextLine();
                     int[] array = new int[size];
                     System.out.println("Enter elements: ");
-                    for(int i=0;i<size;i++){
+                    for (int i = 0; i < size; i++) {
                         array[i] = scanner.nextInt();
+                        scanner.nextLine();
                     }
                     arrayObject.setArray(array);
                     System.out.println("Enter target : ");
                     int target = scanner.nextInt();
+                    scanner.nextLine();
                     arrayObject.getTargetSumArray(target);
                     break;
-                
+
                 case 2:
+                    System.out.println("Enter a string : ");
+                    String input = scanner.nextLine();
+                    arrayObject.setString(input);
+                    System.out.println("Enter the shift value: ");
+                    int shift = scanner.nextInt();
+                    scanner.nextLine();
+                    arrayObject.shiftAlbhabets(shift);
                     break;
 
                 case 0:
@@ -49,17 +59,17 @@ public class Main{
 
             }
 
-        } while(choice != 0);
+        } while (choice != 0);
 
         scanner.close();
     }
 }
 
-
-class Array{
+class Array {
     private int[] array;
+    private String inputString;
 
-    public Array(){
+    public Array() {
         //
     }
 
@@ -73,30 +83,50 @@ class Array{
         this.array = array;
     }
 
-    public void getTargetSumArray(int target){
+    public void setString(String s) {
+        this.inputString = s;
+    }
+
+    public void getTargetSumArray(int target) {
         int size = array.length;
         int pointer1 = 0, pointer2 = 0;
-        int currentSum=0;
+        int currentSum = 0;
         currentSum += array[pointer2];
-        while(pointer2 < size){
-            if(currentSum == target){
-                for(int i=pointer1;i<=pointer2;i++){
-                    System.out.print(array[i]+" ");
+        while (pointer2 < size) {
+            if (currentSum == target) {
+                for (int i = pointer1; i <= pointer2; i++) {
+                    System.out.print(array[i] + " ");
                 }
                 System.out.println();
                 currentSum -= pointer1;
                 pointer1++;
-            }
-            else if(currentSum > target){
-                while(pointer1 < pointer2 && currentSum > target){
+            } else if (currentSum > target) {
+                while (pointer1 < pointer2 && currentSum > target) {
                     currentSum -= array[pointer1];
                     pointer1++;
                 }
-            }
-            else{
+            } else {
                 pointer2++;
-                currentSum += array[pointer2];
+                if (pointer2 < size) {
+                    currentSum += array[pointer2];
+                }
             }
         }
+    }
+
+    public void shiftAlbhabets(int k) {
+        String result = "";
+        int size = inputString.length();
+        for (int i = 0; i < size; i++) {
+            char currentCharacter = inputString.charAt(i);
+            if (Character.isLetter(currentCharacter)) {
+                char newCharacter = (char) (currentCharacter + k);
+                result += newCharacter;
+            }
+            else{
+                result += currentCharacter;
+            }
+        }
+        System.out.println("New String: " + result);
     }
 }
