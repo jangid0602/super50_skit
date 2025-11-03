@@ -1,37 +1,46 @@
-// @Filename - Task1.cpp
-// @Description - The Efficient Traveler 
-// @Author - Ayushi Shukla
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Solution{
-    public:
-    int FarthestCity(vector<int>& nums, int initialEnergy){
-        for(int i=0;i<nums.size();i++){
-            initialEnergy=initialEnergy-nums[i];
-            if(initialEnergy<0){
-                return i;
+class Solution {
+public:
+    int SmartPairFinder(vector<int>& arr, int size, int target) {
+        unordered_map<int, int> prefixCount;
+        int prefixSum = 0, count = 0;
+
+        for (int i = 0; i < size; i++) {
+            prefixSum += arr[i];//current prefix sum
+            if (prefixSum == target) {
+                count++;
             }
+            if (prefixCount.find(prefixSum - target) != prefixCount.end()) {//check if there is a prefix sum that when subtracted from current prefix sum gives target
+                count += prefixCount[prefixSum - target];//add the count of subarrays found 
             }
-            return nums.size()-1;
+            prefixCount[prefixSum]++;
         }
-    };
 
-int main(){
-    int size;
-    cout<<"Enter size of array (in integers) : ";
-    cin>>size;
-    vector<int>nums(size);
-    cout<<"enter array elements (in integer) : "<<endl;
-    for(int i=0;i<size;i++){
-        cin>>nums[i];
+        return count;
     }
-    int initialEnergy;
-    cout<<"Enter the initial energy(in integers): ";
-    cin>>initialEnergy;
-    Solution object;
-    int answer=object.FarthestCity(nums,initialEnergy);
-    cout<<answer<<endl;
+};
 
+int main() {
+    int size;
+    cout << "Enter size of array (in integers): ";
+    cin >> size;
+
+    vector<int> nums(size);
+    cout << "Enter array elements (in integers): " << endl;
+    for (int i = 0; i < size; i++) {
+        cin >> nums[i];
+    }
+
+    int target;
+    cout << "Enter the target sum (in integers): ";
+    cin >> target;
+
+    Solution object;
+    int answer = object.SmartPairFinder(nums, size, target);
+    cout << "Number of subarrays with sum = " << target << " is: " << answer << endl;
+
+    return 0;
 }
