@@ -5,7 +5,8 @@
  */
 
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 bool smartPairFinder(vector<int>& nums, int target) {
@@ -13,9 +14,9 @@ bool smartPairFinder(vector<int>& nums, int target) {
     int left = 0, right = nums.size() - 1;
     while (left < right) {
         int sum = nums[left] + nums[right];
-        if (sum == target) return true;
-        else if (sum < target) left++;
-        else right--;
+        
+         sum == target ? true : (sum < target ? left++ : right--);
+
     }
     return false;
 }

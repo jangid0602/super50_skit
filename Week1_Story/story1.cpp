@@ -5,21 +5,21 @@
  */
 
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
-int EfficientEnergyCalculation(vector<int>& energy, int initialEnergy) {
+int efficientEnergyCalculation(vector<int>& energy, int initialEnergy) {
     int n = energy.size();
-    int counted_city = 0;
+    int countedCity = 0;
     for (int i = 0; i < n; i++) {
         if (initialEnergy > 0 && initialEnergy >= energy[i]) {
-            counted_city++;
+            countedCity++;
             initialEnergy -= energy[i];
         } else {
             break;
         }
     }
-    return counted_city;
+    return countedCity;
 }
 
 // Main function
@@ -32,9 +32,9 @@ int main() {
     cout << "Enter energy values: ";
     for (int i = 0; i < n; i++) 
     {   
-        int val;
-        cin>>val;
-        energy.push_back(val);
+        int value;
+        cin>>value;
+        energy.push_back(value);
     }
     cout << "Enter initial energy: ";
     int initialEnergy;
@@ -42,5 +42,5 @@ int main() {
 
     // Function calll and output
     cout << "Maximum cities that can be visited: "
-        << EfficientEnergyCalculation(energy, initialEnergy) << endl;
+        << efficientEnergyCalculation(energy, initialEnergy) << endl;
 }

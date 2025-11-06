@@ -1,3 +1,9 @@
+/**
+ * @filename - Story7.cpp
+ * @description - oops concepts
+ * @author - Fatimi Bee 
+ */
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -37,7 +43,7 @@ public:
 class Shape {
 public:
     // Virtual method (to be overridden)
-    virtual float get_area() const = 0;
+    virtual float getArea() const = 0;
 };
 
 //Derived Class: Circle 
@@ -50,8 +56,8 @@ public:
         this->radius = radius;
     }
 
-    // Override get_area()
-    float get_area() const override {
+    // Override getArea()
+    float getArea() const override {
         return M_PI * radius * radius;
     }
 };
@@ -66,8 +72,8 @@ public:
         this->side = side;
     }
 
-    // Override get_area()
-    float get_area() const override {
+    // Override getArea()
+    float getArea() const override {
         return side * side;
     }
 };
@@ -97,8 +103,8 @@ int main() {
     // Compute and print
     cout << fixed << setprecision(2);
     cout << "Distance: " << p1.distance(p2) << endl;
-    cout << "Circle Area: " << c.get_area() << endl;
-    cout << "Square Area: " << s.get_area() << endl;
+    cout << "Circle Area: " << c.getArea() << endl;
+    cout << "Square Area: " << s.getArea() << endl;
 
     p1.translate(dx, dy);
     cout << "Translated Point1: ";

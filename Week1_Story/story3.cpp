@@ -4,16 +4,13 @@
  * @author - Fatimi Bee 
  */
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
 int flips(vector<int>& switches) {
     int zeros = 0, ones = 0;
-    for (int val : switches) {
-        if (val == 0)
-            zeros++;
-        else
-            ones++;
+    for (int value : switches) {
+        value == 0 ? zeros++ : ones++ ;
     }
     return min(zeros, ones);
 }

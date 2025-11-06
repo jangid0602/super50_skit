@@ -1,45 +1,52 @@
 /**
  * @filename - Story4.cpp
- * @description - The Odd One Out 
- * @author - Fatimi Bee 
+ * @description - The Odd One Out using XOR
+ * @author - Fatimi Bee
  */
+
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
-int OddOneOut(vector<int>& element) {
+const int NOT_FOUND = -1;
 
-    sort(element.begin(), element.end());
-    for (int i = 0; i < element.size(); ) {
-        int count = 1;
-        while (i + 1 < element.size() && element[i] == element[i + 1]) {
-            count++;
-            i++;
-        }
-        if (count == 1 ) return element[i];
-        i++;
+
+int oddOneOut(const vector<int>& elements) {
+    int xorResult = 0;
+
+    for (int value : elements) {
+        xorResult ^= value;
     }
-    return -1;
 
+    // If XOR result is zero, means no odd occurring element found
+    if (xorResult == 0) {
+        return NOT_FOUND;
+    }
+
+    return xorResult;
 }
 
-// Mainn function
-int main()
-{
-    // Input 
+int main() {
+    vector<int> elements;
 
-     vector<int> elements;
     cout << "Enter number of elements: ";
     int size;
-    cin>>size;
+    cin >> size;
 
     cout << "Enter elements: ";
-    for (int i = 0; i < size; i++)
-    {
+    for (int i = 0; i < size; i++) {
         int value;
-        cin>>value;
+        cin >> value;
         elements.push_back(value);
     }
-    // Function call and output
-    cout << "The odd one out is: " << OddOneOut(elements) << endl;
+
+    int result = oddOneOut(elements);
+
+    if (result == NOT_FOUND) {
+        cout << "No odd one out found." << endl;
+    } else {
+        cout << "The odd one out is: " << result << endl;
+    }
+
+    return 0;
 }

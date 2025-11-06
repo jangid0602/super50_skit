@@ -4,18 +4,18 @@
  * @author - Fatimi Bee 
  */
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
-int MinimalistPainter(vector<int>& time) {
+int minimalistPainter(vector<int>& time) {
     int size = time.size();
     if (size <= 1) return 0;
-    int total_time = 0, max_time = 0;
-    for (int val : time) {
-        total_time += val;
-        max_time = max(max_time, val);
+    int totalTime = 0, maximumTime = 0;
+    for (int value : time) {
+        totalTime += value;
+        maximumTime = max(maximumTime, value);
     }
-    return total_time - max_time;
+    return totalTime - maximumTime;
 }
 
 // Mainn function
@@ -29,11 +29,11 @@ int main(){
     cout << "Enter painting times: ";
     for (int i = 0; i < size; i++) 
     {
-        int time_value;
-        cin>>time_value;
-        time.push_back(time_value);
+        int timeValue;
+        cin>>timeValue;
+        time.push_back(timeValue);
     }
     // Function call and output
     cout << "Minimum time to paint all (skipping one): "
-            << MinimalistPainter(time) << endl;
+            << minimalistPainter(time) << endl;
 }
