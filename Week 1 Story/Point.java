@@ -1,3 +1,7 @@
+// @filename - Point.java
+// @description - Defines a Point class with coordinate operations like distance and translation.
+// @author - Divyansh Tak
+
 public class Point {
     private float x;
     private float y;

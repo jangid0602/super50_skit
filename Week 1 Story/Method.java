@@ -1,3 +1,7 @@
+// @filename - Method.java
+// @description - This file contains different methods that perform certain operations.
+// @author - Divyansh Tak
+
 public class Method {
     
     //Efficient Traveler
