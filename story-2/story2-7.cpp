@@ -1,3 +1,8 @@
+/**
+ * @filename - story2-7.cpp
+ * @description -  Log File Compaction  
+ * @author - Disha Toshniwal 
+ */
 #include <iostream>
 #include <sstream>
 #include <string>

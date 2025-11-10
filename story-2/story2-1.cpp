@@ -1,3 +1,8 @@
+/**
+ * @filename - story2-1.cpp
+ * @description -  The Trendsetter Score 
+ * @author - Disha Toshniwal 
+ */
 #include <iostream>
 #include <vector>
 #include <unordered_map>

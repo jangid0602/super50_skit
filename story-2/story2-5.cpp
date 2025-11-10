@@ -1,3 +1,8 @@
+/**
+ * @filename - story2-5.cpp
+ * @description - Subarray Color Balance   
+ * @author - Disha Toshniwal 
+ */
 #include<bits/stdc++.h>
 using namespace std;
 int main(){

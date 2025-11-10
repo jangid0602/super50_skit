@@ -1,3 +1,8 @@
+/**
+ * @filename - story2-6.cpp
+ * @description -  Text Editor Non-Overlapping Replace  
+ * @author - Disha Toshniwal 
+ */
 #include <iostream>
 #include <vector>
 #include <unordered_map>

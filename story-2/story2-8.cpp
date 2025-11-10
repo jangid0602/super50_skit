@@ -1,3 +1,8 @@
+/**
+ * @filename - story2-8.cpp
+ * @description -  E-commerce SKU Normalization  
+ * @author - Disha Toshniwal 
+ */
 #include <iostream>
 #include <string>
 #include <algorithm>

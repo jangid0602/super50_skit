@@ -1,3 +1,8 @@
+/**
+ * @filename - story2-2.cpp
+ * @description -  Encoded String Subsets  
+ * @author - Disha Toshniwal 
+ */
 #include <iostream>
 #include <vector>
 using namespace std;
