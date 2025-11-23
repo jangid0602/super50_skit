@@ -209,10 +209,18 @@ public class main {
 
             if (cmd.startsWith("enqueue")) {
                 String[] p = cmd.split(" ");
+                if( p.length != 2) {
+                    System.out.println("Invalid command.");
+                    continue;
+                }
                 bucket.enqueue(p[1]);
             }
             else if (cmd.startsWith("process")) {
                 String[] p = cmd.split(" ");
+                if( p.length != 2) {
+                    System.out.println("Invalid command.");
+                    continue;
+                }
                 int k = Integer.parseInt(p[1]);
                 System.out.println(bucket.process(k));
             }
@@ -247,6 +255,11 @@ public class main {
         System.out.println("Enter <value> <count> pairs:");
         for (int i = 0; i < n; i++) {
             String[] parts = sc.nextLine().split(" ");
+            if (parts.length != 2) {
+                System.out.println("Invalid input format. Try again.");
+                i--;
+                continue;
+            }
             CollapsingCountList.Node newNode =
                     new CollapsingCountList.Node(parts[0], Integer.parseInt(parts[1]));
 
@@ -267,12 +280,22 @@ public class main {
 
     // ---------------------- TASK 9 ----------------------
     private static void runZigzagFlatten(Scanner sc) {
+        System.out.println("\n=== ZIGZAG MULTI-LEVEL FLATTEN ===");
 
-        System.out.println("⚠ Entering full test build manually not required.");
-        System.out.println("Use this only with pre-built multilevel structure.");
-        System.out.println("THIS FUNCTION RUNS ZigzagMultilevelFlatten.flattenZigzag().");
+    // Build list using your input menu
+    NodeLevel head = ZigzagUserInput.buildList(0, null);
 
-        // Not building input here because multilevel list requires manual linking.
-        System.out.println("⚠ Build test structure inside code to test this function.");
+    List<Integer> result = new ArrayList<>();
+
+    // Perform zigzag flatten
+    ZigzagUserInput.zigzagFlatten(head, 0, result);
+
+    // Print the result
+    System.out.println("\nZigzag Flattened Output:");
+    for (int x : result) {
+        System.out.print(x + "-");
+    }
+    System.out.println("NULL");
+        
     }
 }
