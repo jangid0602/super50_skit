@@ -1,3 +1,8 @@
+/*
+author: Aman Jeet Singh
+description: Implementation of a two-dimensional linked list with functions to build, transpose, and print the list.
+file: TwoDLinkedList.java
+*/
 class Node {
     int val;
     Node right;

@@ -1,3 +1,10 @@
+/*
+author: Aman Jeet Singh
+description: Implementation of a stack that supports push, pop, top, and retrieving the average of all elements in constant time.
+file: AverageStack.java
+*/
+
+
 public class AverageStack {
 
     private int[] stack;

@@ -1,3 +1,9 @@
+/*
+author: Aman Jeet Singh
+description: Implementation of a function that merges two linked lists in a k-zipline fashion.
+file: KZiplineMerge.java
+*/
+
 public class KZiplineMerge {
 
     static class Node {

@@ -1,3 +1,8 @@
+/*
+author: Aman Jeet Singh
+description: Implementation of a function that interweaves two C-style strings character by character.
+file: CStringInterweaver.java
+*/
 public class CStringInterweaver {
 
     public static String interweave(String s1, String s2) {

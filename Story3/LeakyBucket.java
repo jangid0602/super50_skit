@@ -1,3 +1,9 @@
+/*
+author: Aman Jeet Singh
+description: Implementation of a leaky bucket that enqueues items up to a capacity and processes (removes) a specified number of items.
+file: LeakyBucket.java
+*/
+
 import java.util.*;
 
 public class LeakyBucket {

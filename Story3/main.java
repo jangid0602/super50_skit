@@ -1,5 +1,11 @@
 import java.util.*;
 
+/*
+author: Aman Jeet Singh
+description: Main menu to access various data structure and algorithm implementations.
+file: main.java
+*/
+
 public class main {
 
     public static void main(String[] args) {

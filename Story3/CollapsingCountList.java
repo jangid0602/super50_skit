@@ -1,3 +1,8 @@
+/*
+author: Aman Jeet Singh
+description: Implementation of a linked list that collapses consecutive nodes with the same value by summing their counts.
+file: CollapsingCountList.java
+*/
 public class CollapsingCountList {
 
     static class Node {

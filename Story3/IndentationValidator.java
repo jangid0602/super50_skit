@@ -1,5 +1,11 @@
 import java.util.Stack;
 
+/*
+author: Aman Jeet Singh
+description: Implementation of a validator for indentation levels in a list of strings.
+file: IndentationValidator.java
+*/
+
 public class IndentationValidator {
 
     public static boolean isValidIndentation(String[] lines) {

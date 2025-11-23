@@ -1,5 +1,11 @@
 import java.util.*;
 
+/*
+author: Aman Jeet Singh
+description: Implementation of a program that builds a multi-level doubly linked list based on user input and flattens it in a zigzag manner.
+file: ZigzagUserInput.java
+*/
+
 class NodeLevel {
     int val;
     NodeLevel prev, next, child;
@@ -13,9 +19,9 @@ class NodeLevel {
 public class ZigzagUserInput {
 
     static Scanner sc = new Scanner(System.in);
-    ZigzagUserInput() {
-        NodeLevel head = buildList(0, null);
-    }
+    // ZigzagUserInput() {
+    //     NodeLevel head = buildList(0, null);
+    // }
     static int readInt() {
         while (true) {
             try { return Integer.parseInt(sc.next()); }

@@ -1,3 +1,8 @@
+/*
+author: Aman Jeet Singh
+description: Implementation of a function that partitions a linked list into primes, composites, and ones.
+file: PrimeCompositePartition.java
+*/
 public class PrimeCompositePartition {
 
     static class Node {
