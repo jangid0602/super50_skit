@@ -1,3 +1,7 @@
+// @filename - Method.java
+// @description - Contains implementation of all logic used by Main.java for the assignment problems.
+// @author - Divyansh Tak
+
 import java.util.*;
 
 public class Methods {
