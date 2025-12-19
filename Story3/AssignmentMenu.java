@@ -7,6 +7,7 @@ public class AssignmentMenu {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
+        
         do {
             System.out.println("===== Week 3 Assignment Menu =====");
             System.out.println("1. O(1) Average Stack");
