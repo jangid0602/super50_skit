@@ -1,3 +1,9 @@
+/*
+@filename - MyLibrary.java
+@description - The Digital Library System
+@author - Kavya Gupta
+*/
+
 // 2. The Digital Library System
 
 import java.util.ArrayList;

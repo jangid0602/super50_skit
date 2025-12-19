@@ -1,3 +1,9 @@
+/*
+@filename - BrowserHistory.java
+@description - The Browser History Navigator
+@author - Kavya Gupta
+*/
+
 // 8. The Browser History Navigator
 
 import java.util.Stack;
