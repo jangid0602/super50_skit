@@ -37,9 +37,11 @@ string cipherShift(string str,int k){
 
 int main(){
     
-    int ch;
-    cout << "Enter your problem (1-3): ";
-    cin >> ch;
+   
+    while(1){
+        int ch;
+        cout << "Enter your problem (1-3)(3 to exit):";
+        cin >> ch;
     switch(ch){
         case 1: {
             cout << "The Time traveller array problem" << endl;
@@ -57,7 +59,7 @@ int main(){
         case 2: {
             cout << "The Shifted Cipher Problem" << endl;
             int l;
-            cout<<"Enter the shift value";
+            cout<<"Enter the shift value: ";
             cin>>l;
             string input;
             cout<<"Enter the string to be encrypted: ";
@@ -71,10 +73,8 @@ int main(){
             cout << "" << endl;
             break;
         }
-        default: {
-            cout << "Default case selected" << endl;
-        }
     }
+}
 
 
     return 0;
