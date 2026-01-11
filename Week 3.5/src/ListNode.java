@@ -8,6 +8,6 @@ public class ListNode<T> {
     }
 
     public ListNode(T value) {
-        new ListNode<T>(value, null);
+        new ListNode<>(value, null);
     }
 }
