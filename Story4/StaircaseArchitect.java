@@ -3,7 +3,7 @@
  * Description- A builder is designing a staircase with $N$ steps. He can climb either 1
  step or 2 steps at a time. Write a function to calculate the total number
  of distinct ways he can reach the top.
- * Author - Mayank Rathore
+ * Author - Naval
 
  */
 public class StaircaseArchitect {
@@ -26,3 +26,4 @@ public class StaircaseArchitect {
     }
 
 }
+
