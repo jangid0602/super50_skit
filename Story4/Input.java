@@ -4,7 +4,7 @@
  * It includes methods for capturing and validating integers, characters,
  * and alphabetic strings, ensuring error handling for mismatched types
  * and invalid formats.
- * Author - Mayank Rathore
+ * Author - Naval
  */
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -68,5 +68,6 @@ public class Input {
             }
         }
     }
+
 
 }
