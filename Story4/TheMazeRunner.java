@@ -3,7 +3,7 @@
  * Description- A mouse is in a $N \times N$ grid maze. It starts at $(0,0)$ and needs 
 to reach $(N-1, N-1)$. The mouse can only move Down or Right. Some 
 cells are blocked (0) and some are open (1). Find if a path exists.
- * Author - Mayank Rathore
+ * Author - Naval
  */
 import java.util.Scanner;
 
@@ -42,4 +42,5 @@ public class TheMazeRunner {
         sc.close();
     }
 }
+
 
