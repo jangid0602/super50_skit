@@ -4,7 +4,7 @@
  doll, until you reach the smallest one which contains a tiny golden key.
  Write a recursive function findKey(doll) that opens a doll, checks if it's
  the smallest, and if not, calls itself on the doll found inside.
- * Author - Mayank Rathore
+ * Author - Naval
 
  */
 import java.util.Scanner;
@@ -53,3 +53,4 @@ public class TheRussianDollMystery {
 
     }
 }
+
