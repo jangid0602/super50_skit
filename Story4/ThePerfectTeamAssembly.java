@@ -3,7 +3,7 @@
  * Description- You are a manager with a list of $N$ specialized developers. You want
  to see every possible combination of team members you could form
  (subsets).
- * Author - Mayank Rathore
+ * Author - Naval
  */
 import java.util.ArrayList;
 public class ThePerfectTeamAssembly {
@@ -40,3 +40,4 @@ public class ThePerfectTeamAssembly {
     }
 
 }
+
