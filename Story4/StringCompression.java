@@ -2,7 +2,7 @@
 
  * Description- Given a string, write a recursive function to "compress" it by counting
  consecutive characters. For example, "AAABBC" becomes "3A2B1C".
- * Author - Mayank Rathore
+ * Author - Naval
 
  */
 public class StringCompression {
@@ -33,3 +33,4 @@ public class StringCompression {
         System.out.println(compress(word, 0)); // Output: 2A1B
     }
 }
+
