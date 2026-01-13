@@ -4,7 +4,7 @@
  * Description- A vault requires a 3-digit code using the numbers {1, 2, 3} without
  repetition. Use backtracking to find all possible unique codes that can
  be formed using these digits.
- * Author -Mayank Rathore
+ * Author -Naval
  */
 import java.util.ArrayList;
 
@@ -49,3 +49,4 @@ public class SecureVaultCode {
     }
 
 }
+
