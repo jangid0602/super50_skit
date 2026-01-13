@@ -3,7 +3,7 @@
  * Description- A linguist wants to check if an ancient word is a palindrome (reads the
  same backward). Write a recursive function that compares the first and
  last characters and then calls itself on the remaining "inner" string.
- * Author - Mayank Rathore
+ * Author - Naval
 
  */
 public class TheWordMirror {
@@ -34,3 +34,4 @@ public class TheWordMirror {
 
 
 }
+
