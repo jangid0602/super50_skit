@@ -13,7 +13,7 @@ import java.util.*;
 
 public class TreeLogics {
 
-    // ==================== Q1: Palindromic Path Finder ====================
+    // --- Q1: Palindromic Path Finder ---
 
     private int palindromicPathCount;
 
@@ -74,7 +74,7 @@ public class TreeLogics {
         countPathsStartingHere(node.right, mask, count);
     }
 
-    // ==================== Q2: Vertical Silhouette ====================
+    // --- Q2: Vertical Silhouette ---
 
     public List<List<Integer>> verticalSilhouette(TreeNode root) {
         if (root == null)
@@ -114,7 +114,7 @@ public class TreeLogics {
         return result;
     }
 
-    // ==================== Q3: Distant Cousins ====================
+    // --- Q3: Distant Cousins ---
 
     public List<Integer> findCousins(TreeNode root, int x) {
         if (root == null)
@@ -156,7 +156,7 @@ public class TreeLogics {
         buildDepthAndParentMaps(node.right, node, depth + 1, depthMap, parentMap);
     }
 
-    // ==================== Q4: Minimum Camera Coverage ====================
+    // --- Q4: Minimum Camera Coverage ---
 
     private int cameraCount;
     private static final int NOT_MONITORED = 0;
@@ -195,7 +195,7 @@ public class TreeLogics {
         return NOT_MONITORED;
     }
 
-    // ==================== Q5: Serializer and Deserializer ====================
+    // --- Q5: Serializer and Deserializer ---
 
     public String serialize(TreeNode root) {
         if (root == null)
@@ -234,7 +234,7 @@ public class TreeLogics {
         return node;
     }
 
-    // ==================== Q6: Tree Path Maximum K-Sum ====================
+    // --- Q6: Tree Path Maximum K-Sum ---
 
     private int maxKSumLength;
 
@@ -266,7 +266,7 @@ public class TreeLogics {
         findPathFromNode(node.right, k, currentSum, length);
     }
 
-    // ==================== Q7: Boundary Traversal ====================
+    // --- Q7: Boundary Traversal ---
 
     public List<Integer> boundaryTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
@@ -322,7 +322,7 @@ public class TreeLogics {
         result.addAll(rightNodes);
     }
 
-    // ==================== Q8: LCA of a Set ====================
+    // --- Q8: LCA of a Set ---
 
     public TreeNode lowestCommonAncestorOfSet(TreeNode root, Set<Integer> nodes) {
         if (root == null || nodes == null || nodes.isEmpty())
