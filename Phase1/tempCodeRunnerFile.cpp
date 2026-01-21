@@ -1,0 +1,1 @@
+ result.size() ? "Empty String": result 
