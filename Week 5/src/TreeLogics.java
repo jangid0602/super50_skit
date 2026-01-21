@@ -239,31 +239,34 @@ public class TreeLogics {
     private int maxKSumLength;
 
     public int longestPathWithSumK(TreeNode root, int k) {
-        if (root == null)
-            return 0;
         maxKSumLength = 0;
-        findKSumPaths(root, k);
+        findLongestPath(root, k);
         return maxKSumLength;
     }
 
-    private void findKSumPaths(TreeNode node, int k) {
+    private void findLongestPath(TreeNode node, int k) {
         if (node == null)
             return;
-        findPathFromNode(node, k, 0, 0);
-        findKSumPaths(node.left, k);
-        findKSumPaths(node.right, k);
+        // Try paths starting from this node
+        dfs(node, k, 0, 0);
+        // Also try paths starting from children
+        findLongestPath(node.left, k);
+        findLongestPath(node.right, k);
     }
 
-    private void findPathFromNode(TreeNode node, int k, int currentSum, int length) {
+    private void dfs(TreeNode node, int k, int currentSum, int length) {
         if (node == null)
             return;
+
         currentSum += node.val;
         length++;
+
         if (currentSum == k) {
             maxKSumLength = Math.max(maxKSumLength, length);
         }
-        findPathFromNode(node.left, k, currentSum, length);
-        findPathFromNode(node.right, k, currentSum, length);
+
+        dfs(node.left, k, currentSum, length);
+        dfs(node.right, k, currentSum, length);
     }
 
     // --- Q7: Boundary Traversal ---
@@ -273,13 +276,24 @@ public class TreeLogics {
         if (root == null)
             return result;
 
-        if (!isLeaf(root)) {
-            result.add(root.val);
+        result.add(root.val);
+
+        // For single node, just return root
+        if (root.left == null && root.right == null) {
+            return result;
         }
 
-        addLeftBoundary(root.left, result);
-        addLeaves(root, result);
-        addRightBoundary(root.right, result);
+        // If there's a left subtree, add left boundary and its leaves
+        if (root.left != null) {
+            addLeftBoundary(root.left, result);
+            addLeaves(root.left, result);
+            addLeaves(root.right, result);
+            addRightBoundary(root.right, result);
+        } else {
+            // No left subtree - for right-skewed trees, traverse right side top-to-bottom
+            addRightBoundaryForward(root.right, result);
+            addLeaves(root.right, result);
+        }
 
         return result;
     }
@@ -320,6 +334,16 @@ public class TreeLogics {
         }
         Collections.reverse(rightNodes);
         result.addAll(rightNodes);
+    }
+
+    private void addRightBoundaryForward(TreeNode node, List<Integer> result) {
+        TreeNode current = node;
+        while (current != null) {
+            if (!isLeaf(current)) {
+                result.add(current.val);
+            }
+            current = (current.right != null) ? current.right : current.left;
+        }
     }
 
     // --- Q8: LCA of a Set ---

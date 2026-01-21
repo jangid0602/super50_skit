@@ -356,10 +356,11 @@ class TestTreeLogics {
 
         @Test
         void testLongerPath() {
-            // [5, 4, 8, 11, null, 13, 4], K = 22
+            // [5, 4, 8, 11, null, 13, 4], K = 20
+            // Path [5, 4, 11] sums to 20 with length 3
             TreeNode root = TreeUtils.buildTree(new Integer[] { 5, 4, 8, 11, null, 13, 4 });
-            int result = logic.longestPathWithSumK(root, 22);
-            assertEquals(3, result); // Path [5, 4, 11] or [5, 4, 13] -> [5,4,13] = 22
+            int result = logic.longestPathWithSumK(root, 20);
+            assertEquals(3, result); // Path [5, 4, 11]
         }
 
         @Test
