@@ -22,5 +22,5 @@ int main()
     vector<int> arr={1, 2, 5, 8};
     int k=3;
     int result=Floor_is_Lava(arr,k);
-    cout<<"Longest Stable Path is"<<result;
+    cout<<"Longest Stable Path is :"<<result;
 }

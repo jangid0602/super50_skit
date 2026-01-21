@@ -53,5 +53,5 @@ int main()
     if(flag3 == true)
         cout << "String is a Palindrome" << endl;
     else
-        cout << "String is Not a Palindrome" << endl;
+        cout << "String is Not a Palindrome: " << endl;
 }
