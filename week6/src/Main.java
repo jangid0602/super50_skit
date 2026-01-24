@@ -144,7 +144,7 @@ public class Main {
                         int result = graphLogics.minCostPath(grid);
                         System.out.println("Minimum cost path: " + result);
                     }
-                    default -> System.out.println("Invalid choice!");
+                    default -> System.out.println("Invalid choice...");
                 }
             }
         } catch (IOException e) {
